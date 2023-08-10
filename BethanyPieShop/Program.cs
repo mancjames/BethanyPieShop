@@ -1,6 +1,11 @@
+using BethanyPieShop.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+builder.Services.AddScoped<IPieRepository, MockPieRepository>();
+
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
