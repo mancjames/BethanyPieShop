@@ -1,0 +1,20 @@
+﻿@model BethanyPieShop.ViewModels.PieListViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bethany's Pie Shop</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+    <h1>@Model.CurrentCategory</h1>
+    @foreach(var pie in Model.Pies)
+    {
+        <div>
+            <h2>@pie.Name</h2>
+            <h3>@pie.Price.ToString("c")</h3>
+            <h4>@pie.Category.CategoryName</h4>
+        </div>
+    }
+</body>
+</html>

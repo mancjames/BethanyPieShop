@@ -1,4 +1,5 @@
 ﻿using BethanyPieShop.Models;
+using BethanyPieShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BethanyPieShop.Controllers
@@ -16,7 +17,9 @@ namespace BethanyPieShop.Controllers
 
         public IActionResult List()
         {
-            return View(_pieRepository.AllPies);
+            PieListViewModel piesListViewModel = new PieListViewModel
+                (_pieRepository.AllPies, "Test");
+            return View(piesListViewModel);
         }
     }
 }
